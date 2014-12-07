@@ -10,7 +10,7 @@ angular.module("DirectoryApp").service("directoryService", function(){
 	
 	this.getEmployees = function(){
 		var lsEmployeeArray = localStorage.getItem("employeeListLS");
-		employeeList = JSON.parse(lsEmployeeArray) || employeeList;
+		//employeeList = JSON.parse(lsEmployeeArray) || employeeList;
 		return employeeList;	
 	}
 	
