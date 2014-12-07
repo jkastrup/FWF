@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Employee Directory</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+        <script src="main.js"></script>
+        <script src="directoryService.js"></script>
+        
+    </head>
+    
+    <body ng-app="DirectoryApp">
+    	<h1>Employee Directory</h1>
+        
+        <div ng-controller="EmpController">
+        	<form class="entry_form">
+               	<input type="text" form="entry_form" placeholder="Enter your name..." ng-model="name" size ="60" autofocus required /><br>
+                <input type="text" form="entry_form" placeholder="Street..." ng-model="street" size="60" required /><br>
+                <input type="text" form="entry_form" placeholder="City..." ng-model="city" size="60" required /><br>
+                <input type="text" form="entry_form" placeholder="State..." ng-model="state" size="60" required /><br>
+                <input type="text" form="entry_form" placeholder="Zip..." ng-model="zip" size="5" maxlength="5" required /><br>
+                
+                <input type="submit" value="Add Employee" ng-click="addEmployee()" />
+               	<input type="reset" form="entry_form" value="Reset" ng-click="resetForm()" />
+          	</form><!-- end entry_form -->
+            
+            <div class="employees_form">
+            	<ul>
+                	<li ng-repeat="employee in employeesArray">
+                    	<p>{{ employee.name }}</p>
+                        <p>{{ employee.address }}</p>
+                        <button ng-click="deleteEmployee(employee)">X</button>
+                    </li>
+                </ul>
+            </div>
+        
+        </div><!-- end EmpController -->
+		
+    
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
