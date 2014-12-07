@@ -9,26 +9,21 @@ angular.module("DirectoryApp").service("directoryService", function(){
 	];
 	
 	this.getEmployees = function(){
+		var lsEmployeeArray = localStorage.getItem("employeeListLS");
+		employeeList = JSON.parse(lsEmployeeArray) || employeeList;
 		return employeeList;	
 	}
 	
 	this.addEmployee = function(pEmployee){
 		employeeList.push(pEmployee);
-		
+		localStorage.setItem("employeeListLS", JSON.stringify(employeeList));		
 	}
 	
 	this.removeEmployee = function(pEmployee){
 		employeeList.splice(employeeList.indexOf(pEmployee), 1);
+		localStorage.setItem("employeeListLS", JSON.stringify(employeeList));		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 });
 
 
